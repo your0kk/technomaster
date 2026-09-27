@@ -77,4 +77,8 @@ SQL-тест запускает ту же миграцию на PostgreSQL-дв�
 
 Перед разработкой проверены официальные инструкции [Next.js: Installation](https://nextjs.org/docs/app/getting-started/installation) и [Route Handlers](https://nextjs.org/docs/app/api-reference/file-conventions/route). В Next.js 16 линтер запускается отдельно от сборки.
 
-Скриншоты и замечания преподавателя учтены в [docs/report-guide.md](docs/report-guide.md). Новая версия отчёта автоматически не создавалась.
+Порядок скриншотов и замечания преподавателя учтены в [docs/report-guide.md](docs/report-guide.md).
+
+## ТехноМастер в GitHub
+
+Публичный репозиторий: https://github.com/your0kk/technomaster. [Отчёт по разработке](output/technomaster-report.pdf) содержит анализ аналогов с изображениями, 19 прецедентов, описание БД и результаты проверок. [Скриншоты](docs/screenshots) показывают учебные данные. Сам сайт пока запускается локально.
