@@ -12,16 +12,13 @@ export default async function Home() {
         <div>
           <p className="eyebrow">МЕСТНЫЙ СЕРВИС · КОЧЕНЁВО</p>
           <h1>
-            Вернём технику
-            <br />в привычный
+            Ремонт бытовой
             <br />
-            <span>ритм жизни.</span>
+            <span>техники на дому</span>
           </h1>
           <p className="lead">
-            Стиральная машина снова подводит?
-            <br />
-            Разберёмся с поломкой и приедем к вам домой — в Коченёво и по
-            Новосибирской области.
+            Мастер приедет в Коченёво или по Новосибирской области, проведёт
+            диагностику и согласует стоимость ремонта до начала работ.
           </p>
           <div className="actions">
             <Link className="button" href="/request">
@@ -32,7 +29,7 @@ export default async function Home() {
             </Link>
           </div>
           <p className="meta">
-            Согласуем время визита и стоимость до начала работ
+            Ежедневно с 09:00 до 20:00
           </p>
         </div>
         <div className="hero-image">
@@ -46,8 +43,8 @@ export default async function Home() {
           <div className="image-note">
             <span className="mini-drum">◎</span>
             <div>
-              <strong>Техника должна работать.</strong>
-              <span>Об остальном позаботимся мы.</span>
+              <strong>Выезд мастера от 700 ₽</strong>
+              <span>Диагностика от 500 ₽</span>
             </div>
             <span className="serial">01 /</span>
           </div>
@@ -58,7 +55,7 @@ export default async function Home() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">ЧЕМ ПОМОЖЕМ</p>
-              <h2>Знакомая техника. Понятный ремонт.</h2>
+              <h2>Основные услуги</h2>
             </div>
             <Link className="text-link" href="/services">
               Все услуги ↗
@@ -86,22 +83,22 @@ export default async function Home() {
       </section>
       <section className="trust">
         <div className="container">
-          <h2>Спокойно на каждом этапе</h2>
+          <h2>Как проходит ремонт</h2>
           <div className="three-grid">
             {[
               [
                 "01",
-                "Сначала согласуем цену",
+                "Диагностика и цена",
                 "После диагностики объясним причину поломки и предложим решение.",
               ],
               [
                 "02",
-                "Подберём нужную деталь",
+                "Подбор запчасти",
                 "Сверим совместимость по модели и сервисному коду техники.",
               ],
               [
                 "03",
-                "Останемся на связи",
+                "Связь с сервисом",
                 "Уточним время визита и ответим на вопросы о ремонте.",
               ],
             ].map(([n, t, d]) => (
@@ -118,7 +115,7 @@ export default async function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">ЗАПЧАСТИ ДЛЯ СТИРАЛЬНЫХ МАШИН</p>
-            <h2>Нужная деталь — рядом</h2>
+            <h2>Популярные запчасти</h2>
           </div>
           <Link className="text-link" href="/parts">
             Весь каталог ↗

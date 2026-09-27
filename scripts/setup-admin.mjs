@@ -17,6 +17,9 @@ const {data,error}=await db.auth.admin.createUser({email,password,email_confirm:
 if(error)throw Error("Не удалось создать учебный вход администратора. Проверьте Auth → Users; существующие учётные записи не изменены.");
 // Сначала записываем результат: при ошибке привязки пароль не потеряется.
 await writeFile(file,JSON.stringify({email,password,authUserId:data.user.id,profileId},null,2),{flag:"wx",mode:0o600});
+// Миграция регистрации создаёт профиль клиента для любого нового auth.users.
+// Для служебного входа удаляем только что созданный профиль перед привязкой администратора.
+await db.from("users").delete().eq("auth_user_id",data.user.id).eq("role","client");
 const {error:linkError}=await db.from("users").update({auth_user_id:data.user.id,email}).eq("id",profileId).is("auth_user_id",null);
 if(linkError)throw Error("Вход создан. Завершите привязку auth_user_id по инструкции README; реквизиты сохранены локально.");
 console.log("Учебный администратор создан и связан с профилем Ушакова Юрия Сергеевича. Реквизиты в .admin-credentials.local.json (не Git).");

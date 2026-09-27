@@ -1,6 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { bookingSchema, localDate } from "../src/lib/validation";
+import {
+  bookingSchema,
+  localDate,
+  registrationSchema,
+} from "../src/lib/validation";
 const valid = {
   customer_name: "Учебный клиент",
   customer_phone: "8 (900) 000-00-00",
@@ -38,4 +42,24 @@ test("does not accept role/status injection or missing consent", () => {
       bookingSchema.safeParse({ ...valid, ...patch }).success,
       false,
     );
+});
+test("registration checks phone and matching passwords", () => {
+  const registration = {
+    full_name: "Мария Петрова",
+    phone: "8 (900) 111-22-33",
+    email: "maria@example.com",
+    password: "ordinary-password",
+    password_confirm: "ordinary-password",
+  };
+  assert.equal(
+    registrationSchema.parse(registration).phone,
+    "+79001112233",
+  );
+  assert.equal(
+    registrationSchema.safeParse({
+      ...registration,
+      password_confirm: "different-password",
+    }).success,
+    false,
+  );
 });

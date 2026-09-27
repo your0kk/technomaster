@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Service } from "@/lib/types";
 import { bookingSchema, timeSlots, localDate } from "@/lib/validation";
+import { browserDb } from "@/lib/supabase/browser";
 export default function BookingForm({
   services,
   initialService,
@@ -51,9 +52,15 @@ export default function BookingForm({
     }
     setPending(true);
     try {
+      const { data: sessionData } = (await browserDb()?.auth.getSession()) ?? {
+        data: { session: null },
+      };
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (sessionData.session?.access_token)
+        headers.Authorization = `Bearer ${sessionData.session.access_token}`;
       const response = await fetch("/api/repair-requests", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify(parsed.data),
       });
       const result = await response.json();

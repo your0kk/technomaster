@@ -67,3 +67,29 @@ export const bookingSchema = z
   })
   .strict();
 export type BookingInput = z.input<typeof bookingSchema>;
+
+const russianPhone = z
+  .string()
+  .trim()
+  .max(30)
+  .transform((v) => v.replace(/[\s()\-]/g, ""))
+  .refine((v) => /^(?:\+7|8)\d{10}$/.test(v), "Введите номер в формате +7")
+  .transform((v) => (v.startsWith("8") ? "+7" + v.slice(1) : v));
+
+export const registrationSchema = z
+  .object({
+    full_name: z.string().trim().min(2, "Укажите имя").max(120),
+    phone: russianPhone,
+    email: z.email("Проверьте адрес почты").max(254),
+    password: z.string().min(8, "Минимум 8 символов").max(72),
+    password_confirm: z.string(),
+  })
+  .refine((value) => value.password === value.password_confirm, {
+    message: "Пароли не совпадают",
+    path: ["password_confirm"],
+  });
+
+export const profileSchema = z.object({
+  full_name: z.string().trim().min(2, "Укажите имя").max(120),
+  phone: russianPhone,
+});

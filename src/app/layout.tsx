@@ -30,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <nav aria-label="Основная навигация">
               <Link href="/services">Услуги</Link>
               <Link href="/parts">Запчасти</Link>
+              <Link href="/account">Личный кабинет</Link>
             </nav>
             <div className="header-contact">
               <strong>+7 (383) 000-00-00</strong>
@@ -51,6 +52,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </p>
             <Link href="/services">Услуги</Link>
             <Link href="/parts">Запчасти</Link>
+            <Link href="/account">Личный кабинет</Link>
             <Link href="/admin">Кабинет администратора</Link>
           </div>
           <div className="container footer-bottom">

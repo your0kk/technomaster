@@ -64,18 +64,12 @@ export default function Admin() {
         <div className="auth-grid">
           <div>
             <p className="eyebrow">СЛУЖЕБНЫЙ ДОСТУП</p>
-            <h1>
-              Рабочий день
-              <br />
-              под контролем.
-            </h1>
+            <h1>Кабинет администратора</h1>
             <p className="lead">
-              Заявки клиентов, время выезда и текущий статус ремонта — в одном
-              списке.
+              Заявки клиентов, время выезда и текущий статус ремонта.
             </p>
             <p className="notice">
-              Вход через Supabase Auth. Доступ к списку есть только у
-              пользователя с ролью admin.
+              Доступ есть только у сотрудников с ролью администратора.
             </p>
           </div>
           <form className="panel" onSubmit={login}>
@@ -128,7 +122,8 @@ export default function Admin() {
               </button>
               <button
                 className="text-link"
-                onClick={() => {
+                onClick={async () => {
+                  await browserDb()?.auth.signOut();
                   setToken("");
                   setRequests([]);
                   setError("");

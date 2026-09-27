@@ -9,6 +9,8 @@ coverage/
 *.log
 .DS_Store
 .supabase/
+supabase/.temp/
 .npm-cache/
 test-results/
 .admin-credentials.local.json
+.client-credentials.local.json

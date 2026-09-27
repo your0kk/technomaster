@@ -6,7 +6,7 @@ test("migration, FK/check constraints, timestamps and RLS", async () => {
   const db = new PGlite();
   try {
     await db.exec(
-      "create role anon; create role authenticated; create role service_role bypassrls; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql as $$ select null::uuid $$; grant usage on schema public,auth to anon,authenticated,service_role;",
+      "create role anon; create role authenticated; create role service_role bypassrls; create schema auth; create table auth.users(id uuid primary key,email text,raw_user_meta_data jsonb not null default '{}'); create function auth.uid() returns uuid language sql as $$ select null::uuid $$; grant usage on schema public,auth to anon,authenticated,service_role;",
     );
     await db.exec(
       await readFile(
@@ -17,10 +17,27 @@ test("migration, FK/check constraints, timestamps and RLS", async () => {
         "utf8",
       ),
     );
+    await db.exec(
+      await readFile(
+        new URL(
+          "../supabase/migrations/20260927211158_client_accounts.sql",
+          import.meta.url,
+        ),
+        "utf8",
+      ),
+    );
     const count = await db.query<{ n: number }>(
       "select count(*)::int as n from public.parts",
     );
     assert.equal(count.rows[0].n, 10);
+    await db.exec(
+      `insert into auth.users(id,email,raw_user_meta_data)
+       values ('70000000-0000-4000-8000-000000000001','new@example.com','{"full_name":"Новый клиент","phone":"+79000000005"}')`,
+    );
+    const client = await db.query<{ role: string; phone: string }>(
+      "select role::text,phone from public.users where auth_user_id='70000000-0000-4000-8000-000000000001'",
+    );
+    assert.deepEqual(client.rows[0], { role: "client", phone: "+79000000005" });
     for (const sql of [
       "update public.parts set price=-1",
       "update public.parts set stock_quantity=-1",

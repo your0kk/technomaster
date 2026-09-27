@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { bookingSchema } from "@/lib/validation";
-import { privateDb } from "@/lib/supabase/server";
+import { privateDb, publicDb } from "@/lib/supabase/server";
 export const runtime = "nodejs";
 export async function POST(request: NextRequest) {
   const origin = request.headers.get("origin");
@@ -60,6 +60,25 @@ export async function POST(request: NextRequest) {
       { status: 503 },
     );
   try {
+    let clientId: string | null = null;
+    const token = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+    if (token) {
+      const auth = publicDb();
+      const { data: authData, error: authError } = auth
+        ? await auth.auth.getUser(token)
+        : { data: { user: null }, error: Error("Auth unavailable") };
+      if (authError || !authData.user)
+        return NextResponse.json(
+          { error: "Сессия закончилась. Войдите ещё раз или отправьте заявку как гость." },
+          { status: 401 },
+        );
+      const { data: profile } = await db
+        .from("users")
+        .select("id,role")
+        .eq("auth_user_id", authData.user.id)
+        .maybeSingle();
+      if (profile?.role === "client") clientId = profile.id;
+    }
     const { data: service, error: lookupError } = await db
       .from("services")
       .select("id")
@@ -76,7 +95,7 @@ export async function POST(request: NextRequest) {
     void consent;
     const { data, error } = await db
       .from("repair_requests")
-      .insert({ ...values, status: "new" })
+      .insert({ ...values, client_id: clientId, status: "new" })
       .select("id,status")
       .single();
     if (error) throw error;
