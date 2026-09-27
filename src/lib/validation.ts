@@ -1,0 +1,69 @@
+import { z } from "zod";
+export const timeSlots = [
+  "09:00–12:00",
+  "12:00–14:00",
+  "14:00–17:00",
+  "17:00–19:00",
+] as const;
+export function localDate() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Novosibirsk",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+export const bookingSchema = z
+  .object({
+    customer_name: z
+      .string()
+      .trim()
+      .min(2, "Укажите имя, минимум 2 символа")
+      .max(120),
+    customer_phone: z
+      .string()
+      .trim()
+      .max(30)
+      .transform((v) => v.replace(/[\s()\-]/g, ""))
+      .refine(
+        (v) => /^(?:\+7|8)\d{10}$/.test(v),
+        "Введите российский номер: +7 и 10 цифр",
+      )
+      .transform((v) => (v.startsWith("8") ? "+7" + v.slice(1) : v)),
+    address: z
+      .string()
+      .trim()
+      .min(8, "Укажите населённый пункт, улицу и дом")
+      .max(500),
+    appliance_type: z.enum([
+      "Стиральная машина",
+      "Посудомоечная машина",
+      "Холодильник",
+      "Духовой шкаф",
+      "Другая техника",
+    ]),
+    appliance_brand: z.string().trim().max(80).default(""),
+    appliance_model: z
+      .string()
+      .trim()
+      .min(1, "Укажите модель или «Не знаю»")
+      .max(120),
+    service_id: z.uuid("Выберите услугу"),
+    issue_description: z
+      .string()
+      .trim()
+      .min(10, "Опишите неисправность, минимум 10 символов")
+      .max(2000),
+    preferred_date: z.iso
+      .date("Укажите корректную дату")
+      .refine((v) => v >= localDate(), "Выберите сегодняшнюю или будущую дату")
+      .refine(
+        (v) =>
+          v <= new Date(Date.now() + 90 * 86400000).toISOString().slice(0, 10),
+        "Выберите дату в ближайшие 90 дней",
+      ),
+    preferred_time: z.enum(timeSlots),
+    consent: z.literal(true, { error: "Нужно согласие на обработку данных" }),
+  })
+  .strict();
+export type BookingInput = z.input<typeof bookingSchema>;

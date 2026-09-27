@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+coverage/
+.env*
+!.env.example
+.env.local
+*.tsbuildinfo
+*.log
+.DS_Store
+.supabase/
+.npm-cache/
+test-results/
+.admin-credentials.local.json
