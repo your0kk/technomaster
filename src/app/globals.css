@@ -21,6 +21,7 @@ body {
     16px/1.6 Inter,
     Arial,
     sans-serif;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -149,10 +150,20 @@ nav {
   border-radius: 5px;
   font-weight: 600;
   font-size: 14px;
-  transition: background 0.15s;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
 }
 .button:hover {
   background: #1944ad;
+  box-shadow: 0 8px 18px rgb(36 87 214 / 18%);
+  transform: translateY(-1px);
+}
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 .button.secondary {
   background: var(--light);
@@ -168,6 +179,24 @@ nav {
   border: 0;
   background: none;
   padding: 0;
+  transition: color 0.18s ease;
+}
+.text-link:hover {
+  color: #1944ad;
+}
+.text-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.18s ease;
+}
+.text-link:hover::after {
+  transform: scaleX(1);
 }
 .cart-layout,
 .checkout-layout {
@@ -282,6 +311,9 @@ nav {
   padding-bottom: 76px;
   align-items: center;
 }
+.hero > div:first-child {
+  animation: rise-in 0.58s both;
+}
 .hero h1 {
   font-size: 62px;
   line-height: 1.1;
@@ -319,6 +351,7 @@ nav {
 }
 .hero-image {
   position: relative;
+  animation: rise-in 0.65s 0.08s both;
 }
 .hero-image > img {
   width: 100%;
@@ -357,6 +390,10 @@ nav {
   padding-top: 64px;
   padding-bottom: 72px;
 }
+.section-heading,
+.intro {
+  animation: rise-in 0.46s both;
+}
 .white {
   background: #fff;
 }
@@ -384,10 +421,16 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: border 0.15s;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  animation: rise-in 0.45s both;
 }
 .service-card:hover {
   border-color: #a9bdec;
+  box-shadow: 0 12px 24px rgb(24 28 36 / 7%);
+  transform: translateY(-3px);
 }
 .service-card h2 {
   font-size: 22px;
@@ -402,10 +445,30 @@ nav {
   margin: 0 0 14px;
   flex: 1;
 }
-.number {
-  font-size: 12px;
+.service-card:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.service-card:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.service-card:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.card-mark,
+.trust-mark {
   color: var(--blue);
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+.card-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #cbdafd;
+  border-radius: 50%;
+  font-size: 19px;
 }
 .price-row {
   display: flex;
@@ -433,6 +496,19 @@ nav {
   color: var(--muted);
   margin: 0;
 }
+.trust-item {
+  animation: rise-in 0.5s both;
+}
+.trust-item:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.trust-item:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.trust-mark {
+  display: block;
+  margin-bottom: 16px;
+}
 .part-card {
   background: #fff;
   border: 1px solid var(--border);
@@ -440,9 +516,16 @@ nav {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  animation: rise-in 0.48s both;
 }
 .part-card:hover {
   border-color: var(--blue);
+  box-shadow: 0 12px 24px rgb(24 28 36 / 7%);
+  transform: translateY(-3px);
 }
 .part-photo {
   background: #fff;
@@ -539,6 +622,7 @@ footer {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 32px;
+  animation: rise-in 0.42s both;
 }
 .pricing {
   margin-top: 48px;
@@ -684,6 +768,15 @@ textarea {
   min-width: 0;
   font-size: 15px;
   font-weight: 400;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8cafff;
+  box-shadow: 0 0 0 3px rgb(140 175 255 / 22%);
 }
 textarea {
   resize: vertical;
@@ -1001,6 +1094,16 @@ td code {
 .skip:focus {
   top: 8px;
 }
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @media (min-width: 1500px) {
   .hero {
     padding-top: 80px;
@@ -1195,6 +1298,7 @@ td code {
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+    animation: none !important;
     scroll-behavior: auto !important;
   }
 }

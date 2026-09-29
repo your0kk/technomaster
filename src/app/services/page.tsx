@@ -14,9 +14,9 @@ export default async function Services() {
       </Intro>
       <DataNotice {...data} />
       <div className="service-grid">
-        {data.services.map((s, i) => (
+        {data.services.map((s) => (
           <article className="service-card" key={s.id}>
-            <span className="number">0{i + 1}</span>
+            <span className="card-mark" aria-hidden="true">◌</span>
             <h2>{s.title}</h2>
             <p>{s.description}</p>
             <strong>от {money(s.price_from)}</strong>

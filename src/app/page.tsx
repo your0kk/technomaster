@@ -63,13 +63,13 @@ export default async function Home() {
           </div>
           <DataNotice {...data} />
           <div className="service-grid">
-            {data.services.map((s, i) => (
+            {data.services.map((s) => (
               <Link
                 href={`/request?service=${s.id}`}
                 className="service-card"
                 key={s.id}
               >
-                <span className="number">0{i + 1}</span>
+                <span className="card-mark" aria-hidden="true">◌</span>
                 <h3>{s.title}</h3>
                 <p>{s.description}</p>
                 <div className="price-row">
@@ -87,23 +87,23 @@ export default async function Home() {
           <div className="three-grid">
             {[
               [
-                "1",
+                "◎",
                 "Диагностика и цена",
                 "После диагностики объясним причину поломки и предложим решение.",
               ],
               [
-                "2",
+                "◍",
                 "Подбор запчасти",
                 "Сверим совместимость по модели и сервисному коду техники.",
               ],
               [
-                "3",
+                "↗",
                 "Связь с сервисом",
                 "Уточним время визита и ответим на вопросы о ремонте.",
               ],
-            ].map(([n, t, d]) => (
-              <div key={n}>
-                <span className="number">{n} /</span>
+            ].map(([mark, t, d]) => (
+              <div className="trust-item" key={t}>
+                <span className="trust-mark" aria-hidden="true">{mark}</span>
                 <h3>{t}</h3>
                 <p>{d}</p>
               </div>
