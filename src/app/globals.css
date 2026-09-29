@@ -169,6 +169,108 @@ nav {
   background: none;
   padding: 0;
 }
+.cart-layout,
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(310px, 0.75fr);
+  gap: 28px;
+  align-items: start;
+}
+.cart-items h1,
+.checkout-layout h1 {
+  margin-top: 0;
+}
+.cart-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+}
+.cart-row h2 {
+  font-size: 17px;
+  margin: 3px 0 8px;
+}
+.cart-row .meta {
+  margin: 0;
+}
+.quantity {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+}
+.quantity button {
+  border: 0;
+  background: #fff;
+  color: var(--blue);
+  width: 32px;
+  height: 34px;
+  font-size: 20px;
+}
+.quantity span {
+  min-width: 26px;
+  text-align: center;
+  font-weight: 600;
+}
+.cart-summary,
+.checkout-layout .summary {
+  position: sticky;
+  top: 22px;
+}
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+}
+.success-panel {
+  max-width: 680px;
+  margin: 30px auto;
+  text-align: center;
+}
+.success-panel .actions {
+  justify-content: center;
+}
+.request-controls {
+  display: grid;
+  gap: 8px;
+  min-width: 180px;
+}
+.request-controls .button {
+  min-height: 38px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+.master-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.master-card h2 {
+  font-size: 22px;
+  margin: 13px 0 0;
+}
+.master-details {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 9px 14px;
+  margin: 22px 0;
+}
+.master-details dt {
+  color: var(--muted);
+}
+.master-details dd {
+  margin: 0;
+}
+.master-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.master-actions .button {
+  min-height: 42px;
+}
 .full {
   width: 100%;
 }
@@ -983,7 +1085,9 @@ td code {
   .booking-layout,
   .success-layout,
   .auth-grid,
-  .account-grid {
+  .account-grid,
+  .cart-layout,
+  .checkout-layout {
     grid-template-columns: 1fr;
   }
   .account-heading {
@@ -1080,6 +1184,12 @@ td code {
   }
   .request-visit {
     align-items: flex-start;
+  }
+  .cart-row {
+    grid-template-columns: 1fr auto;
+  }
+  .master-grid {
+    grid-template-columns: 1fr;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -26,6 +26,33 @@ test("migration, FK/check constraints, timestamps and RLS", async () => {
         "utf8",
       ),
     );
+    await db.exec(
+      await readFile(
+        new URL(
+          "../supabase/migrations/20260928101038_operations_and_orders.sql",
+          import.meta.url,
+        ),
+        "utf8",
+      ),
+    );
+    await db.exec(
+      await readFile(
+        new URL(
+          "../supabase/migrations/20260929145753_telegram_notifications_policy.sql",
+          import.meta.url,
+        ),
+        "utf8",
+      ),
+    );
+    await db.exec(
+      await readFile(
+        new URL(
+          "../supabase/migrations/20260929150612_telegram_notification_user_index.sql",
+          import.meta.url,
+        ),
+        "utf8",
+      ),
+    );
     const count = await db.query<{ n: number }>(
       "select count(*)::int as n from public.parts",
     );
@@ -62,6 +89,29 @@ test("migration, FK/check constraints, timestamps and RLS", async () => {
       "select updated_at>created_at as changed from public.repair_requests where id='50000000-0000-4000-8000-000000000001'",
     );
     assert.equal(stamp.rows[0].changed, true);
+    await db.exec(
+      "update public.users set telegram_chat_id=12345 where id='30000000-0000-4000-8000-000000000003'; update public.repair_requests set status='in_progress' where id='50000000-0000-4000-8000-000000000002'",
+    );
+    const notifications = await db.query<{ n: number }>(
+      "select count(*)::int as n from public.telegram_notifications",
+    );
+    assert.equal(notifications.rows[0].n, 1);
+    const order = await db.query<{ id: string }>(
+      `select public.create_order(
+        '30000000-0000-4000-8000-000000000003',
+        'Тестовый клиент',
+        '+79000000002',
+        'pickup',
+        null,
+        'Позвонить заранее',
+        '[{"part_id":"20000000-0000-4000-8000-000000000001","quantity":2}]'::jsonb
+      ) as id`,
+    );
+    assert.match(order.rows[0].id, /^[0-9a-f-]{36}$/);
+    const orderedPart = await db.query<{ stock_quantity: number }>(
+      "select stock_quantity from public.parts where id='20000000-0000-4000-8000-000000000001'",
+    );
+    assert.equal(orderedPart.rows[0].stock_quantity, 6);
     await db.exec(
       "update public.parts set is_active=false where article='ASK-M231XP'; set role anon;",
     );

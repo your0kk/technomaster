@@ -1,15 +1,14 @@
 import "server-only";
 import { publicDb } from "./supabase/server";
-import { demoParts, demoServices } from "./demo";
 import type { Part, Service } from "./types";
 export async function catalogData() {
   const db = publicDb();
   if (!db)
     return {
-      parts: demoParts,
-      services: demoServices,
-      demo: true,
-      error: false,
+      parts: [] as Part[],
+      services: [] as Service[],
+      demo: false,
+      error: true,
     };
   const [parts, services] = await Promise.all([
     db

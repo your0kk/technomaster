@@ -46,7 +46,7 @@ export default async function Home() {
               <strong>Выезд мастера от 700 ₽</strong>
               <span>Диагностика от 500 ₽</span>
             </div>
-            <span className="serial">01 /</span>
+            <span className="serial">•</span>
           </div>
         </div>
       </section>
@@ -87,17 +87,17 @@ export default async function Home() {
           <div className="three-grid">
             {[
               [
-                "01",
+                "1",
                 "Диагностика и цена",
                 "После диагностики объясним причину поломки и предложим решение.",
               ],
               [
-                "02",
+                "2",
                 "Подбор запчасти",
                 "Сверим совместимость по модели и сервисному коду техники.",
               ],
               [
-                "03",
+                "3",
                 "Связь с сервисом",
                 "Уточним время визита и ответим на вопросы о ремонте.",
               ],

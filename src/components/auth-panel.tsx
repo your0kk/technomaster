@@ -55,25 +55,19 @@ export default function AuthPanel() {
         return;
       }
 
-      const { full_name, phone, email, password } = parsed.data;
-      const { data, error: authError } = await db.auth.signUp({
-        email,
-        password,
-        options: { data: { full_name, phone } },
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parsed.data),
       });
-      if (authError) {
-        if (authError.message.toLowerCase().includes("already")) {
-          throw Error("Учётная запись с такой почтой уже существует.");
-        }
-        throw Error("Не удалось зарегистрироваться. Попробуйте ещё раз.");
+      const result = await response.json();
+      if (!response.ok) {
+        setFields(result.fields ?? {});
+        throw Error(result.error ?? "Не удалось зарегистрироваться. Попробуйте ещё раз.");
       }
-      if (data.session) {
-        router.replace("/account");
-      } else {
-        event.currentTarget.reset();
-        setMessage("Регистрация завершена. Подтвердите адрес по письму и войдите.");
-        setMode("login");
-      }
+      const { error: signInError } = await db.auth.signInWithPassword({ email: parsed.data.email, password: parsed.data.password });
+      if (signInError) throw Error("Учётная запись создана, но войти не удалось. Повторите вход.");
+      router.replace("/account");
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Ошибка подключения");
     } finally {

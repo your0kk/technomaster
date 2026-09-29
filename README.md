@@ -2,7 +2,7 @@
 
 Учебный сайт сервиса ремонта бытовой техники в Коченёво и Новосибирской области.
 
-Работают каталог, вызов мастера, регистрация, личный кабинет клиента и кабинет администратора. Данные хранятся в Supabase.
+Работают вызов мастера, каталог, корзина и оформление заказа, регистрация, личный кабинет клиента, кабинеты администратора и мастера. Данные хранятся в Supabase.
 
 ## Запуск
 
@@ -12,7 +12,17 @@ Copy-Item .env.example .env.local
 npm run dev
 ```
 
-Переменные для `.env.local` и порядок применения миграций описаны в [supabase/README.md](supabase/README.md). Для учебных входов есть `scripts/setup-admin.mjs` и `scripts/setup-client.mjs`.
+В `.env.local` нужны `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` и `SUPABASE_SERVICE_ROLE_KEY`. Миграции из `supabase/migrations` применяются по порядку.
+
+Учебные входы создают локально:
+
+```powershell
+node --env-file=.env.local scripts/setup-admin.mjs
+node --env-file=.env.local scripts/setup-client.mjs
+node --env-file=.env.local scripts/setup-master.mjs
+```
+
+Пароли сохраняются в локальных файлах и не попадают в Git.
 
 Сайт откроется по адресу http://127.0.0.1:3000.
 

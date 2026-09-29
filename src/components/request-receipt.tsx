@@ -59,10 +59,11 @@ export default function Receipt({ id }: { id: string }) {
       <aside className="panel summary">
         <h2>Всегда на связи</h2>
         <p>Пока сообщим о визите по телефону.</p>
-        <span className="badge">Telegram · скоро</span>
+        <a className="text-link" href="https://t.me/ATPABKA">
+          Написать в Telegram: @ATPABKA
+        </a>
         <p className="muted">
-          Уведомления в Telegram, онлайн-оплата и кассовый чек появятся на
-          следующих этапах.
+          Автоматические уведомления появятся после подключения бота.
         </p>
       </aside>
     </div>

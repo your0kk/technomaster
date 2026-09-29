@@ -244,12 +244,10 @@ export default function AccountDashboard() {
           </section>
           <section className="panel account-section contact-card">
             <h2>Связь с сервисом</h2>
-            <a href="tel:+73830000000" className="contact-phone">+7 (383) 000-00-00</a>
-            <p className="meta">Демонстрационный номер</p>
+            <a href="tel:+79529283307" className="contact-phone">+7 (952) 928-33-07</a>
+            <p className="meta">Коченёво</p>
             <hr />
-            <p className="muted">
-              Уведомления и переписку в Telegram подключим отдельным этапом.
-            </p>
+            <a className="text-link" href="https://t.me/ATPABKA">Написать в Telegram: @ATPABKA</a>
           </section>
         </aside>
       </div>

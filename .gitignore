@@ -14,3 +14,6 @@ supabase/.temp/
 test-results/
 .admin-credentials.local.json
 .client-credentials.local.json
+.master-credentials.local.json
+AGENTS.md
+CLAUDE.md

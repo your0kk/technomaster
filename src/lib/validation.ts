@@ -93,3 +93,69 @@ export const profileSchema = z.object({
   full_name: z.string().trim().min(2, "Укажите имя").max(120),
   phone: russianPhone,
 });
+
+export const orderSchema = z
+  .object({
+    customer_name: z.string().trim().min(2, "Укажите имя").max(120),
+    customer_phone: russianPhone,
+    delivery_method: z.enum(["pickup", "delivery"]),
+    delivery_address: z.string().trim().max(500).optional().default(""),
+    comment: z.string().trim().max(1000).optional().default(""),
+    items: z
+      .array(
+        z.object({
+          part_id: z.uuid("Некорректная запчасть"),
+          quantity: z.number().int().min(1).max(20),
+        }),
+      )
+      .min(1, "Корзина пуста")
+      .max(20, "Слишком много позиций"),
+  })
+  .strict()
+  .superRefine((value, ctx) => {
+    if (
+      value.delivery_method === "delivery" &&
+      value.delivery_address.length < 8
+    )
+      ctx.addIssue({
+        code: "custom",
+        path: ["delivery_address"],
+        message: "Укажите населённый пункт, улицу и дом",
+      });
+  });
+
+export const adminRequestUpdateSchema = z
+  .object({
+    id: z.uuid(),
+    master_id: z.uuid().nullable(),
+    status: z.enum([
+      "new",
+      "confirmed",
+      "assigned",
+      "in_progress",
+      "waiting_part",
+      "completed",
+      "cancelled",
+    ]),
+  })
+  .strict()
+  .superRefine((value, ctx) => {
+    if (
+      ["assigned", "in_progress", "waiting_part", "completed"].includes(
+        value.status,
+      ) &&
+      !value.master_id
+    )
+      ctx.addIssue({
+        code: "custom",
+        path: ["master_id"],
+        message: "Назначьте мастера",
+      });
+  });
+
+export const masterRequestUpdateSchema = z
+  .object({
+    id: z.uuid(),
+    status: z.enum(["in_progress", "waiting_part", "completed"]),
+  })
+  .strict();

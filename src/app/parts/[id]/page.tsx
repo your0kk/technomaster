@@ -3,6 +3,7 @@ import Link from "next/link";
 import { catalogData } from "@/lib/catalog";
 import { DataNotice, PartPhoto } from "@/components/ui";
 import { money } from "@/lib/types";
+import { AddToCart } from "@/components/cart";
 export const dynamic = "force-dynamic";
 export default async function Part({
   params,
@@ -49,17 +50,12 @@ export default async function Part({
               <li key={m}>{m}</li>
             ))}
           </ul>
-          <p className="muted">
-            Совместимость в учебном каталоге ориентировочная. Нужна проверка по
-            сервисному коду.
-          </p>
+          <p className="muted">Совместимость проверим по модели техники перед выдачей.</p>
+          <AddToCart part={p} />
           <Link className="button full" href="/request">
             Нужна помощь с подбором ↗
           </Link>
-          <div className="notice">
-            Оформление заказа, онлайн-оплата и кассовый чек появятся на
-            следующем этапе. Сейчас можно отправить заявку на подбор детали.
-          </div>
+          <div className="notice">Онлайн-оплата и кассовый чек будут доступны после подтверждения менеджером.</div>
         </div>
       </div>
     </div>

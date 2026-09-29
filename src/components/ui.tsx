@@ -46,16 +46,11 @@ export function Intro({
     </div>
   );
 }
-export function DataNotice({ demo, error }: { demo: boolean; error: boolean }) {
+export function DataNotice({ error }: { error: boolean }) {
   return error ? (
     <p className="notice error" role="alert">
       Не удалось загрузить данные Supabase. Проверьте настройки и применённую
       миграцию.
-    </p>
-  ) : demo ? (
-    <p className="notice">
-      Учебный просмотр · каталог содержит примеры. Для сохранения заявок
-      подключите Supabase.
     </p>
   ) : null;
 }

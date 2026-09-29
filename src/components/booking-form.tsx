@@ -129,7 +129,7 @@ export default function BookingForm({
     >
       <div className="panel">
         <div className="form-progress">
-          <span>01 Контакты · 02 Техника · 03 Визит</span>
+          <span>Контакты · Техника · Визит</span>
           <small>Заполнено {completed} из 6</small>
         </div>
         <progress value={completed} max={6} aria-label="Заполнение формы" />
@@ -261,8 +261,8 @@ export default function BookingForm({
           отдельно.
         </p>
         <div className="summary-contact">
-          Нужна помощь?<strong>+7 (383) 000-00-00</strong>
-          <small>Демонстрационный номер</small>
+          Нужна помощь?<strong>+7 (952) 928-33-07</strong>
+          <small>Коченёво</small>
         </div>
       </aside>
     </form>
