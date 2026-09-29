@@ -9,19 +9,24 @@ import { browserDb } from "@/lib/supabase/browser";
 
 const storageKey = "technomaster-cart";
 const changedEvent = "technomaster-cart-changed";
-const emptyCart: CartItem[] = [];
 
 export type CartItem = Pick<
   Part,
   "id" | "title" | "article" | "price" | "stock_quantity"
 > & { quantity: number };
 
+const emptyCart: CartItem[] = [];
+let cachedCart: CartItem[] = emptyCart;
+let cachedValue: string | null = null;
+
 function readCart(): CartItem[] {
   if (typeof window === "undefined") return [];
   try {
-    const value: unknown = JSON.parse(localStorage.getItem(storageKey) ?? "[]");
+    const rawValue = localStorage.getItem(storageKey) ?? "[]";
+    if (rawValue === cachedValue) return cachedCart;
+    const value: unknown = JSON.parse(rawValue);
     if (!Array.isArray(value)) return [];
-    return value.filter(
+    cachedCart = value.filter(
       (item): item is CartItem =>
         typeof item === "object" &&
         item !== null &&
@@ -33,13 +38,20 @@ function readCart(): CartItem[] {
         typeof item.quantity === "number" &&
         item.quantity > 0,
     );
+    cachedValue = rawValue;
+    return cachedCart;
   } catch {
+    cachedCart = emptyCart;
+    cachedValue = null;
     return [];
   }
 }
 
 function writeCart(items: CartItem[]) {
-  localStorage.setItem(storageKey, JSON.stringify(items));
+  const rawValue = JSON.stringify(items);
+  cachedCart = items;
+  cachedValue = rawValue;
+  localStorage.setItem(storageKey, rawValue);
   window.dispatchEvent(new Event(changedEvent));
 }
 
