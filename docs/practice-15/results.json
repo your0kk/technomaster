@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-06",
+  "repository": "https://github.com/your0kk/technomaster",
+  "pr_url": "https://github.com/your0kk/technomaster/pull/1",
+  "pr_run_url": "https://github.com/your0kk/technomaster/actions/runs/37422189901",
+  "main_run_url": "https://github.com/your0kk/technomaster/actions/runs/37422431162",
+  "image_sha": "a5a76ff4d5e694fd8dd6e7a57a41d9e05f8f78cf",
+  "image_digest": "sha256:1d3e909f6ef887debbe69a501b1ab954a5e9228e7098b9b4de2e09e368b324fb",
+  "image": "ghcr.io/your0kk/technomaster",
+  "tags": ["latest", "a5a76ff4d5e694fd8dd6e7a57a41d9e05f8f78cf"],
+  "visibility": "public",
+  "pr_checks": "success",
+  "main_checks": "success",
+  "local_container_check": "success",
+  "registry_container_check": "success",
+  "pages_http_200": ["/", "/services", "/parts", "/cart", "/checkout", "/login", "/admin", "/master"],
+  "anonymous_admin_api": 401,
+  "authenticated_admin_api": 200,
+  "healthcheck": "healthy",
+  "private_files_in_image": false,
+  "server_key_in_image_config": false
+}
