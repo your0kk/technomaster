@@ -550,6 +550,7 @@ nav {
   flex-direction: column;
   flex: 1;
 }
+.part-body h2,
 .part-body h3 {
   font-size: 17px;
   margin: 12px 0;
@@ -1269,6 +1270,7 @@ td code {
   .part-body {
     padding: 14px;
   }
+  .part-body h2,
   .part-body h3 {
     font-size: 15px;
   }
@@ -1301,4 +1303,9 @@ td code {
     animation: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+.product-models-heading {
+  font-size: 20px;
+  margin: 16px 0 12px;
 }

@@ -3,7 +3,11 @@ import { Intro, DataNotice } from "@/components/ui";
 import { catalogData } from "@/lib/catalog";
 import { money } from "@/lib/types";
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Услуги и стоимость" };
+export const metadata = {
+  title: "Услуги и стоимость",
+  description:
+    "Ремонт стиральных машин и бытовой техники в Коченёво. Стоимость диагностики, выезда мастера, замены насоса и ТЭНа.",
+};
 export default async function Services() {
   const data = await catalogData();
   return (

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   description:
     "Ремонт стиральных машин и бытовой техники в Коченёво и Новосибирской области. Каталог запчастей и вызов мастера.",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

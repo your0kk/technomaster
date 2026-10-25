@@ -1,10 +1,30 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { catalogData } from "@/lib/catalog";
 import { DataNotice, PartPhoto } from "@/components/ui";
 import { money } from "@/lib/types";
 import { AddToCart } from "@/components/cart";
 export const dynamic = "force-dynamic";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const data = await catalogData();
+  const part = data.parts.find((item) => item.id === id);
+  if (!part) {
+    return {
+      title: "Запчасть недоступна",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: part.title,
+    description: `${part.title}, артикул ${part.article}. Совместимость со стиральной машиной уточним перед заказом. Самовывоз из Коченёво или доставка.`,
+  };
+}
 export default async function Part({
   params,
 }: {
@@ -16,6 +36,7 @@ export default async function Part({
   if (data.error)
     return (
       <div className="container section">
+        <h1>Не удалось загрузить запчасть</h1>
         <DataNotice {...data} />
       </div>
     );
@@ -44,7 +65,7 @@ export default async function Part({
               : "Под заказ"}
           </p>
           <p className="big-price">{money(p.price)}</p>
-          <h3>Совместимые модели</h3>
+          <h2 className="product-models-heading">Совместимые модели</h2>
           <ul className="model-list">
             {p.compatible_models.map((m) => (
               <li key={m}>{m}</li>

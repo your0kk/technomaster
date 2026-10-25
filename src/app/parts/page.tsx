@@ -1,8 +1,21 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Intro, DataNotice, PartCard } from "@/components/ui";
 import { catalogData } from "@/lib/catalog";
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Каталог запчастей" };
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; category?: string }>;
+}): Promise<Metadata> {
+  const { q, category } = await searchParams;
+  return {
+    title: "Каталог запчастей",
+    description:
+      "Насосы, ТЭНы, манжеты, подшипники и другие запчасти для стиральных машин. Поиск по названию и артикулу, подбор совместимой детали в Коченёво.",
+    ...(q || category ? { robots: { index: false, follow: true } } : {}),
+  };
+}
 export default async function Parts({
   searchParams,
 }: {
@@ -55,7 +68,7 @@ export default async function Parts({
       {parts.length ? (
         <div className="parts-grid">
           {parts.map((p) => (
-            <PartCard part={p} key={p.id} />
+            <PartCard part={p} key={p.id} headingLevel={2} />
           ))}
         </div>
       ) : (
