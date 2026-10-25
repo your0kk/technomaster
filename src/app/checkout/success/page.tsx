@@ -1,5 +1,5 @@
 import Link from "next/link";
-export const metadata = { title: "Заказ принят" };
+export const metadata = { robots: { index: false, follow: false }, title: "Заказ принят" };
 export default async function Success({
   searchParams,
 }: {

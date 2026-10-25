@@ -78,7 +78,14 @@ export function PartPhoto({
     </div>
   );
 }
-export function PartCard({ part }: { part: Part }) {
+export function PartCard({
+  part,
+  headingLevel = 3,
+}: {
+  part: Part;
+  headingLevel?: 2 | 3;
+}) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
     <Link className="part-card" href={`/parts/${part.id}`}>
       <PartPhoto part={part} />
@@ -86,7 +93,7 @@ export function PartCard({ part }: { part: Part }) {
         <span className="meta">
           {part.category} · {part.article}
         </span>
-        <h3>{part.title}</h3>
+        <Heading>{part.title}</Heading>
         <span className={part.stock_quantity > 0 ? "stock" : "muted"}>
           {part.stock_quantity > 0
             ? `В наличии · ${part.stock_quantity} шт.`

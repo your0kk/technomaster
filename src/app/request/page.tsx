@@ -2,7 +2,7 @@ import BookingForm from "@/components/booking-form";
 import { Intro, DataNotice } from "@/components/ui";
 import { catalogData } from "@/lib/catalog";
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Вызвать мастера" };
+export const metadata = { robots: { index: false, follow: false }, title: "Вызвать мастера" };
 export default async function Request({
   searchParams,
 }: {

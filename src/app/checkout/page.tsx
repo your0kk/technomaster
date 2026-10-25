@@ -1,5 +1,5 @@
 import { CheckoutForm } from "@/components/cart";
-export const metadata = { title: "Оформление заказа" };
+export const metadata = { robots: { index: false, follow: false }, title: "Оформление заказа" };
 export default function CheckoutPage() {
   return (
     <div className="container section">

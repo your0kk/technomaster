@@ -1,5 +1,5 @@
 import Receipt from "@/components/request-receipt";
-export const metadata = { title: "Заявка отправлена" };
+export const metadata = { robots: { index: false, follow: false }, title: "Заявка отправлена" };
 export default async function Success({
   searchParams,
 }: {
