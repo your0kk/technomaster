@@ -17,3 +17,4 @@ test-results/
 .master-credentials.local.json
 AGENTS.md
 CLAUDE.md
+deploy/certs/
