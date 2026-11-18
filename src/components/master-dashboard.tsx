@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { browserDb } from "@/lib/supabase/browser";
 import { statuses, type RepairRequest, type RepairStatus } from "@/lib/types";
 
@@ -13,6 +13,12 @@ export default function MasterDashboard() {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
 
+  async function currentToken() {
+    const { data } = await browserDb()!.auth.getSession();
+    if (!data.session) throw Error("Сессия истекла. Войдите снова.");
+    return data.session.access_token;
+  }
+
   async function load(accessToken: string) {
     const response = await fetch("/api/master/requests", {
       headers: { Authorization: `Bearer ${accessToken}` },
@@ -24,6 +30,50 @@ export default function MasterDashboard() {
     setProfile(result.profile);
     setRequests(result.requests);
   }
+  useEffect(() => {
+    let active = true;
+    const db = browserDb();
+    if (!db) return;
+    void db.auth
+      .getSession()
+      .then(async ({ data }) => {
+        if (!data.session) return;
+        try {
+          await load(data.session.access_token);
+          if (active) setToken(data.session.access_token);
+        } catch (caught) {
+          if (active)
+            setError(
+              caught instanceof Error ? caught.message : "Ошибка подключения",
+            );
+        }
+      })
+      .catch(() => {
+        if (active) setError("Не удалось восстановить сессию");
+      });
+    const { data: listener } = db.auth.onAuthStateChange((event, session) => {
+      if (!active) return;
+      if (event === "TOKEN_REFRESHED") setToken(session?.access_token ?? "");
+      if (event === "SIGNED_OUT") setToken("");
+    });
+    return () => {
+      active = false;
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  async function refresh() {
+    setPending(true);
+    setError("");
+    try {
+      await load(await currentToken());
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Ошибка подключения");
+    } finally {
+      setPending(false);
+    }
+  }
+
   async function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const values = new FormData(event.currentTarget);
@@ -53,7 +103,7 @@ export default function MasterDashboard() {
       const response = await fetch("/api/master/requests", {
         method: "PATCH",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${await currentToken()}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ id: request.id, status }),
@@ -121,7 +171,7 @@ export default function MasterDashboard() {
         <div className="actions">
           <button
             className="button secondary"
-            onClick={() => void load(token)}
+            onClick={() => void refresh()}
             disabled={pending}
           >
             Обновить

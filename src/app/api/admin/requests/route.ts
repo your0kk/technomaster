@@ -1,3 +1,4 @@
+import { z } from "zod";
 import { NextRequest, NextResponse } from "next/server";
 import { adminRequestUpdateSchema } from "@/lib/validation";
 import { privateDb, publicDb } from "@/lib/supabase/server";
@@ -35,7 +36,7 @@ export async function GET(request: NextRequest) {
       { status: context.status, headers },
     );
   try {
-    const [requestsResult, mastersResult] = await Promise.all([
+    const [requestsResult, mastersResult, ordersResult] = await Promise.all([
       context.db
         .from("repair_requests")
         .select(
@@ -48,10 +49,22 @@ export async function GET(request: NextRequest) {
         .select("id,full_name,phone")
         .eq("role", "master")
         .order("full_name"),
+      context.db
+        .from("orders")
+        .select(
+          "id,customer_name,customer_phone,delivery_method,delivery_address,comment,total_amount,status,created_at,order_items(quantity,unit_price,parts(title,article))",
+        )
+        .order("created_at", { ascending: false })
+        .limit(100),
     ]);
-    if (requestsResult.error || mastersResult.error) throw Error();
+    if (requestsResult.error || mastersResult.error || ordersResult.error)
+      throw Error();
     return NextResponse.json(
-      { requests: requestsResult.data, masters: mastersResult.data },
+      {
+        requests: requestsResult.data,
+        masters: mastersResult.data,
+        orders: ordersResult.data,
+      },
       { headers },
     );
   } catch {
@@ -77,6 +90,40 @@ export async function PATCH(request: NextRequest) {
       { error: "Не удалось прочитать изменение" },
       { status: 400 },
     );
+  }
+  if (
+    typeof body === "object" &&
+    body !== null &&
+    "kind" in body &&
+    body.kind === "order"
+  ) {
+    const parsed = z
+      .object({
+        kind: z.literal("order"),
+        id: z.uuid(),
+        status: z.enum(["new", "confirmed", "paid", "completed", "cancelled"]),
+      })
+      .strict()
+      .safeParse(body);
+    if (!parsed.success)
+      return NextResponse.json(
+        { error: "Недопустимые данные заказа" },
+        { status: 400 },
+      );
+    const { data, error } = await context.db
+      .from("orders")
+      .update({ status: parsed.data.status })
+      .eq("id", parsed.data.id)
+      .select("id,status")
+      .maybeSingle();
+    if (error)
+      return NextResponse.json(
+        { error: "Не удалось сохранить заказ" },
+        { status: 503 },
+      );
+    if (!data)
+      return NextResponse.json({ error: "Заказ не найден" }, { status: 404 });
+    return NextResponse.json({ order: data });
   }
   const parsed = adminRequestUpdateSchema.safeParse(body);
   if (!parsed.success)

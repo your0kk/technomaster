@@ -76,9 +76,18 @@ export async function PATCH(request: NextRequest) {
     .update({ status: parsed.data.status })
     .eq("id", parsed.data.id)
     .eq("master_id", context.profile.id)
+    .in("status", ["assigned", "in_progress", "waiting_part"])
     .select("id,status")
     .maybeSingle();
-  if (error || !data)
-    return NextResponse.json({ error: "Заявка не найдена" }, { status: 404 });
+  if (error)
+    return NextResponse.json(
+      { error: "Не удалось изменить статус" },
+      { status: 503 },
+    );
+  if (!data)
+    return NextResponse.json(
+      { error: "Заявка недоступна или уже завершена. Обновите список." },
+      { status: 409 },
+    );
   return NextResponse.json({ request: data });
 }

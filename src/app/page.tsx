@@ -39,6 +39,7 @@ export default async function Home() {
             width={640}
             height={560}
             priority
+            fetchPriority="high"
           />
           <div className="image-note">
             <span className="mini-drum">◎</span>

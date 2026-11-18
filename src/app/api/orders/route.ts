@@ -1,3 +1,4 @@
+import { createHash, randomUUID } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { orderSchema } from "@/lib/validation";
 import { privateDb, publicDb } from "@/lib/supabase/server";
@@ -5,6 +6,23 @@ import { privateDb, publicDb } from "@/lib/supabase/server";
 export const runtime = "nodejs";
 
 export async function POST(request: NextRequest) {
+  const origin = request.headers.get("origin");
+  const expectedOrigin = `${request.nextUrl.protocol}//${request.headers.get("host") ?? request.nextUrl.host}`;
+  if (origin && origin !== expectedOrigin)
+    return NextResponse.json(
+      { error: "Недопустимый источник запроса" },
+      { status: 403 },
+    );
+  const requestKey = request.headers.get("idempotency-key") ?? randomUUID();
+  if (
+    !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+      requestKey,
+    )
+  )
+    return NextResponse.json(
+      { error: "Некорректный ключ заказа" },
+      { status: 400 },
+    );
   const db = privateDb();
   if (!db)
     return NextResponse.json(
@@ -58,7 +76,20 @@ export async function POST(request: NextRequest) {
     clientId = profile.id;
   }
 
-  const { data, error } = await db.rpc("create_order", {
+  const requestHash = createHash("sha256")
+    .update(
+      JSON.stringify({
+        clientId,
+        ...parsed.data,
+        items: [...parsed.data.items].sort((a, b) =>
+          a.part_id.localeCompare(b.part_id),
+        ),
+      }),
+    )
+    .digest("hex");
+  const { data, error } = await db.rpc("create_order_once", {
+    request_key: requestKey,
+    request_hash: requestHash,
     customer_id: clientId,
     customer_name_input: parsed.data.customer_name,
     customer_phone_input: parsed.data.customer_phone,

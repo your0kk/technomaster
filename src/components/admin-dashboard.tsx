@@ -1,19 +1,98 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { browserDb } from "@/lib/supabase/browser";
-import { statuses, type RepairRequest, type RepairStatus } from "@/lib/types";
+import {
+  money,
+  statuses,
+  type RepairRequest,
+  type RepairStatus,
+} from "@/lib/types";
+
+const orderStatuses = {
+  new: "Новый",
+  confirmed: "Подтверждён",
+  paid: "Оплачен",
+  completed: "Получен",
+  cancelled: "Отменён",
+};
+type Order = {
+  id: string;
+  customer_name: string;
+  customer_phone: string;
+  delivery_method: string;
+  delivery_address: string | null;
+  comment: string | null;
+  total_amount: number;
+  status: keyof typeof orderStatuses;
+  order_items: {
+    quantity: number;
+    unit_price: number;
+    parts: { title: string; article: string } | null;
+  }[];
+};
 
 type Master = { id: string; full_name: string; phone: string | null };
 
 export default function AdminDashboard() {
   const [token, setToken] = useState("");
   const [requests, setRequests] = useState<RepairRequest[]>([]);
+  const [orders, setOrders] = useState<Order[]>([]);
   const [masters, setMasters] = useState<Master[]>([]);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
   const [filter, setFilter] = useState("");
   const [updated, setUpdated] = useState("");
+
+  async function currentToken() {
+    const { data } = await browserDb()!.auth.getSession();
+    if (!data.session) throw Error("Сессия истекла. Войдите снова.");
+    return data.session.access_token;
+  }
+
+  useEffect(() => {
+    let active = true;
+    const db = browserDb();
+    if (!db) return;
+    void db.auth
+      .getSession()
+      .then(async ({ data }) => {
+        if (!data.session) return;
+        try {
+          await load(data.session.access_token);
+          if (active) setToken(data.session.access_token);
+        } catch (caught) {
+          if (active)
+            setError(
+              caught instanceof Error ? caught.message : "Ошибка подключения",
+            );
+        }
+      })
+      .catch(() => {
+        if (active) setError("Не удалось восстановить сессию");
+      });
+    const { data: listener } = db.auth.onAuthStateChange((event, session) => {
+      if (!active) return;
+      if (event === "TOKEN_REFRESHED") setToken(session?.access_token ?? "");
+      if (event === "SIGNED_OUT") setToken("");
+    });
+    return () => {
+      active = false;
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  async function refresh() {
+    setPending(true);
+    setError("");
+    try {
+      await load(await currentToken());
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Ошибка подключения");
+    } finally {
+      setPending(false);
+    }
+  }
 
   async function load(accessToken: string) {
     const response = await fetch("/api/admin/requests", {
@@ -24,6 +103,7 @@ export default function AdminDashboard() {
     if (!response.ok) throw Error(result.error ?? "Не удалось получить заявки");
     setRequests(result.requests);
     setMasters(result.masters);
+    setOrders(result.orders ?? []);
     setUpdated(new Date().toLocaleTimeString("ru"));
   }
 
@@ -60,7 +140,7 @@ export default function AdminDashboard() {
       const response = await fetch("/api/admin/requests", {
         method: "PATCH",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${await currentToken()}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -77,6 +157,33 @@ export default function AdminDashboard() {
           item.id === request.id ? { ...item, ...result.request } : item,
         ),
       );
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Ошибка подключения");
+    } finally {
+      setPending(false);
+    }
+  }
+
+  async function saveOrder(order: Order) {
+    setPending(true);
+    setError("");
+    try {
+      const response = await fetch("/api/admin/requests", {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${await currentToken()}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          kind: "order",
+          id: order.id,
+          status: order.status,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok)
+        throw Error(result.error ?? "Не удалось сохранить заказ");
+      await load(await currentToken());
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : "Ошибка подключения");
     } finally {
@@ -135,7 +242,7 @@ export default function AdminDashboard() {
         <div className="actions">
           <button
             className="button secondary"
-            onClick={() => void load(token)}
+            onClick={() => void refresh()}
             disabled={pending}
           >
             Обновить
@@ -237,7 +344,20 @@ export default function AdminDashboard() {
                   >
                     <select
                       name="master_id"
-                      defaultValue={request.master_id ?? ""}
+                      value={request.master_id ?? ""}
+                      aria-label="Назначенный мастер"
+                      onChange={(event) =>
+                        setRequests((items) =>
+                          items.map((item) =>
+                            item.id === request.id
+                              ? {
+                                  ...item,
+                                  master_id: event.target.value || null,
+                                }
+                              : item,
+                          ),
+                        )
+                      }
                     >
                       <option value="">Не назначен</option>
                       {masters.map((master) => (
@@ -246,7 +366,23 @@ export default function AdminDashboard() {
                         </option>
                       ))}
                     </select>
-                    <select name="status" defaultValue={request.status}>
+                    <select
+                      name="status"
+                      value={request.status}
+                      aria-label="Статус заявки"
+                      onChange={(event) =>
+                        setRequests((items) =>
+                          items.map((item) =>
+                            item.id === request.id
+                              ? {
+                                  ...item,
+                                  status: event.target.value as RepairStatus,
+                                }
+                              : item,
+                          ),
+                        )
+                      }
+                    >
                       {Object.entries(statuses).map(([value, title]) => (
                         <option key={value} value={value}>
                           {title}
@@ -266,6 +402,73 @@ export default function AdminDashboard() {
           <p className="empty">Заявок с таким статусом пока нет.</p>
         )}
       </div>
+      <section className="section">
+        <h2>Заказы запчастей</h2>
+        <p className="muted">
+          Последние 100 заказов. При отмене резерв остается до проверки деталей
+          сотрудником.
+        </p>
+        {!orders.length && <p>Заказов пока нет.</p>}
+        {orders.map((order) => (
+          <article className="panel" key={order.id}>
+            <h3>Заказ {order.id.slice(0, 8)}</h3>
+            <p>
+              {order.customer_name}, {order.customer_phone}
+            </p>
+            <p>
+              {order.delivery_method === "pickup"
+                ? "Самовывоз из Коченёво"
+                : `Доставка: ${order.delivery_address}`}
+            </p>
+            {order.comment && <p>{order.comment}</p>}
+            <ul>
+              {order.order_items.map((item, index) => (
+                <li key={index}>
+                  {item.parts?.title ?? "Запчасть"} ({item.parts?.article}) —{" "}
+                  {item.quantity} шт., {money(item.unit_price)}
+                </li>
+              ))}
+            </ul>
+            <strong>Итого {money(order.total_amount)}</strong>
+            <form
+              className="request-controls"
+              onSubmit={(event) => {
+                event.preventDefault();
+                void saveOrder(order);
+              }}
+            >
+              <label>
+                Статус заказа
+                <select
+                  value={order.status}
+                  disabled={pending}
+                  onChange={(event) =>
+                    setOrders((items) =>
+                      items.map((item) =>
+                        item.id === order.id
+                          ? {
+                              ...item,
+                              status: event.target.value as Order["status"],
+                            }
+                          : item,
+                      ),
+                    )
+                  }
+                >
+                  {Object.entries(orderStatuses).map(([value, title]) => (
+                    <option key={value} value={value}>
+                      {title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <button className="button secondary" disabled={pending}>
+                Сохранить заказ
+              </button>
+            </form>
+          </article>
+        ))}
+      </section>
     </>
   );
 }
