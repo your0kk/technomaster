@@ -129,7 +129,7 @@ export default function BookingForm({
     >
       <div className="panel">
         <div className="form-progress">
-          <span>Контакты · Техника · Визит</span>
+          <span>Заполнение заявки</span>
           <small>Заполнено {completed} из 6</small>
         </div>
         <progress value={completed} max={6} aria-label="Заполнение формы" />
@@ -236,14 +236,13 @@ export default function BookingForm({
           </p>
         )}
         <button className="button full" disabled={pending || !services.length}>
-          {pending ? "Сохраняем заявку…" : "Отправить заявку →"}
+          {pending ? "Сохраняем заявку…" : "Отправить заявку"}
         </button>
         <p className="meta">
           Дата и время предварительные — подтвердим по телефону.
         </p>
       </div>
       <aside className="panel summary">
-        <p className="eyebrow">РЕЗЮМЕ ОБРАЩЕНИЯ</p>
         <h2>Ваша заявка</h2>
         <dl>
           <dt>Услуга</dt>

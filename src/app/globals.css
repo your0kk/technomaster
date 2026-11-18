@@ -479,6 +479,15 @@ nav {
 .price-row > span {
   color: var(--blue);
 }
+.part-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.part-article {
+  color: var(--muted);
+  font-size: 12px;
+}
 .three-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1220,7 +1229,7 @@ td code {
   .four-grid,
   .parts-grid,
   .three-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 16px;
   }
   .section-heading {
@@ -1295,6 +1304,12 @@ td code {
   }
   .master-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .service-grid,
+  .four-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -130,7 +130,7 @@ export default function AdminDashboard() {
         <div>
           <p className="eyebrow">ПАНЕЛЬ АДМИНИСТРАТОРА</p>
           <h1>Заявки сервиса</h1>
-          <p className="muted">Последние 100 обращений · обновлено {updated}</p>
+          <p className="muted">Последние 100 обращений. Обновлено {updated}</p>
         </div>
         <div className="actions">
           <button
