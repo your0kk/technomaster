@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
       context.db
         .from("orders")
         .select(
-          "id,customer_name,customer_phone,delivery_method,delivery_address,comment,total_amount,status,created_at,order_items(quantity,unit_price,parts(title,article))",
+          "id,customer_name,customer_phone,delivery_method,delivery_address,comment,total_amount,status,created_at,order_items(quantity,unit_price:price_at_order,parts(title,article))",
         )
         .order("created_at", { ascending: false })
         .limit(100),
