@@ -221,25 +221,54 @@ export function CheckoutForm() {
     setPending(true);
     setError("");
     const values = Object.fromEntries(new FormData(event.currentTarget));
-    const session = await browserDb()?.auth.getSession();
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
     };
-    if (session?.data.session?.access_token)
-      headers.Authorization = `Bearer ${session.data.session.access_token}`;
     try {
+      const session = await browserDb()?.auth.getSession();
+      if (session?.data.session?.access_token)
+        headers.Authorization = `Bearer ${session.data.session.access_token}`;
+      const payload = {
+        ...values,
+        delivery_method: method,
+        items: items.map(({ id, quantity }) => ({ part_id: id, quantity })),
+      };
+      const digest = await crypto.subtle.digest(
+        "SHA-256",
+        new TextEncoder().encode(
+          JSON.stringify({
+            payload,
+            user: session?.data.session?.user.id ?? null,
+          }),
+        ),
+      );
+      const signature = Array.from(new Uint8Array(digest), (byte) =>
+        byte.toString(16).padStart(2, "0"),
+      ).join("");
+      let attempt: { signature: string; key: string } | null = null;
+      try {
+        attempt = JSON.parse(
+          localStorage.getItem("tm-checkout-attempt") ?? "null",
+        );
+      } catch {}
+      if (attempt?.signature !== signature || !attempt?.key) {
+        attempt = { signature, key: crypto.randomUUID() };
+        localStorage.setItem("tm-checkout-attempt", JSON.stringify(attempt));
+      }
+      headers["Idempotency-Key"] = attempt.key;
       const response = await fetch("/api/orders", {
         method: "POST",
         headers,
-        body: JSON.stringify({
-          ...values,
-          delivery_method: method,
-          items: items.map(({ id, quantity }) => ({ part_id: id, quantity })),
-        }),
+        body: JSON.stringify(payload),
       });
       const result = await response.json();
       if (!response.ok)
         throw Error(result.error ?? "Не удалось оформить заказ");
+      sessionStorage.setItem(
+        `tm-order:${result.id}`,
+        JSON.stringify({ id: result.id, status: "created" }),
+      );
+      localStorage.removeItem("tm-checkout-attempt");
       writeCart([]);
       router.push(`/checkout/success?id=${encodeURIComponent(result.id)}`);
     } catch (caught) {
@@ -341,6 +370,61 @@ export function CheckoutForm() {
           Менеджер подтвердит наличие, способ оплаты и выдаст кассовый чек.
         </p>
       </aside>
+    </div>
+  );
+}
+
+export function OrderReceipt({ id }: { id: string }) {
+  const state = useSyncExternalStore(
+    () => () => {},
+    () => {
+      try {
+        const receipt = JSON.parse(
+          sessionStorage.getItem(`tm-order:${id}`) ?? "null",
+        );
+        return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(
+          id,
+        ) &&
+          receipt?.id === id &&
+          receipt?.status === "created"
+          ? "found"
+          : "missing";
+      } catch {
+        return "missing";
+      }
+    },
+    () => "loading",
+  );
+  if (state === "loading") return <p role="status">Проверяем подтверждение…</p>;
+  if (state === "missing")
+    return (
+      <div className="panel">
+        <h1>Нет подтверждения заказа</h1>
+        <p>
+          Подтверждение доступно в браузере, в котором оформляли заказ. Историю
+          заказов можно посмотреть в личном кабинете.
+        </p>
+        <Link className="button" href="/account">
+          Личный кабинет
+        </Link>
+      </div>
+    );
+  return (
+    <div className="panel success-panel">
+      <span className="success-check">✓</span>
+      <h1>Спасибо, заказ оформлен.</h1>
+      <p>Менеджер проверит наличие деталей и свяжется с вами по телефону.</p>
+      <p className="notice">
+        Номер заказа: <code>{id.slice(0, 8)}</code>
+      </p>
+      <div className="actions">
+        <Link className="button" href="/parts">
+          В каталог
+        </Link>
+        <Link className="button secondary" href="/account">
+          Личный кабинет
+        </Link>
+      </div>
     </div>
   );
 }

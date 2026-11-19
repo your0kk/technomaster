@@ -1,0 +1,2733 @@
+{
+  "date": "2026-11-19",
+  "origin": "https://technomaster.localhost",
+  "sourceMainSeries": "e06e7f0d3ca9b5fd28ab08f629940d48b00b3dc7",
+  "sourceLoginRetest": "1b75e727390a97c824962a12aef26fba2e5cf0cb",
+  "lighthouse": "13.5.0",
+  "mode": "Navigation, Desktop, simulated throttling preset",
+  "runs": [
+    {
+      "path": "/",
+      "public": true,
+      "run": 1,
+      "stem": "home-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 235.21,
+        "largest-contentful-paint": 643.21,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 422.19125397975733
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:48:06.773Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/",
+      "public": true,
+      "run": 2,
+      "stem": "home-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 228.2415,
+        "largest-contentful-paint": 288.2415,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 403.8158822243533
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:48:27.505Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/",
+      "public": true,
+      "run": 3,
+      "stem": "home-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.655,
+        "largest-contentful-paint": 643.655,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 441.35978008155973
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:48:45.453Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/services",
+      "public": true,
+      "run": 1,
+      "stem": "services-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 325.0135,
+        "largest-contentful-paint": 605.0135,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 340.9052788004543
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:49:03.155Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/services",
+      "public": true,
+      "run": 2,
+      "stem": "services-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 246.514,
+        "largest-contentful-paint": 646.514,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.00018995174683032772,
+        "speed-index": 326.4459008475323
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:49:21.707Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/services",
+      "public": true,
+      "run": 3,
+      "stem": "services-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 327.26,
+        "largest-contentful-paint": 607.26,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 417.8583617281009
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:49:39.232Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts",
+      "public": true,
+      "run": 1,
+      "stem": "parts-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 325.0485,
+        "largest-contentful-paint": 605.0485,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 571.9915822096752
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:49:57.445Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts",
+      "public": true,
+      "run": 2,
+      "stem": "parts-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.648,
+        "largest-contentful-paint": 603.648,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 324.84851649013046
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:50:17.228Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts",
+      "public": true,
+      "run": 3,
+      "stem": "parts-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 327.14300000000003,
+        "largest-contentful-paint": 607.143,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 354.01892389272734
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:50:34.518Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000003",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000003-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 402.659,
+        "largest-contentful-paint": 562.659,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 402.659
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:50:52.634Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000003",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000003-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 400.61,
+        "largest-contentful-paint": 560.61,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 581.9486044523724
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:51:08.737Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000003",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000003-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.448,
+        "largest-contentful-paint": 563.448,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 433.11507596828574
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:51:25.282Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000006",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000006-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.301,
+        "largest-contentful-paint": 563.3009999999999,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0019317544793697094,
+        "speed-index": 646.3033798276258
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:51:41.493Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000006",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000006-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 402.382,
+        "largest-contentful-paint": 562.3820000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 796.4390309155547
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:51:58.108Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000006",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000006-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 402.399,
+        "largest-contentful-paint": 562.399,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 421.48106299993685
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:52:15.073Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000004",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000004-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.29200000000003,
+        "largest-contentful-paint": 563.292,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 592.578545823737
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:52:32.278Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000004",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000004-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.914,
+        "largest-contentful-paint": 561.914,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 705.2736595777674
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:52:49.258Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000004",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000004-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 402.376,
+        "largest-contentful-paint": 522.376,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 442.3789323004711
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:53:06.907Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000009",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000009-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.53700000000003,
+        "largest-contentful-paint": 561.537,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 688.7098448361671
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:53:26.625Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000009",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000009-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.276,
+        "largest-contentful-paint": 561.2760000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 509.1026988351141
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:53:43.372Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000009",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000009-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 321.245,
+        "largest-contentful-paint": 481.245,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 720.234064099143
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:54:00.801Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000010",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000010-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.576,
+        "largest-contentful-paint": 561.576,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 541.0729528235737
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:54:17.726Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000010",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000010-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 404.238,
+        "largest-contentful-paint": 564.238,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 440.83254325198243
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:54:34.095Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000010",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000010-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 402.291,
+        "largest-contentful-paint": 562.2909999999999,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 539.8205945716456
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:54:50.513Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000005",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000005-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.23900000000003,
+        "largest-contentful-paint": 561.239,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 558.0666411674154
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:55:06.792Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000005",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000005-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.44399999999996,
+        "largest-contentful-paint": 563.444,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 626.0294476824945
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:55:23.160Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000005",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000005-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.914,
+        "largest-contentful-paint": 561.914,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 497.2893964233675
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:55:40.701Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000001",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000001-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.711,
+        "largest-contentful-paint": 561.711,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001108628809896666,
+        "speed-index": 549.8347480794511
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:55:57.083Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000001",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000001-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 241.047,
+        "largest-contentful-paint": 361.047,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001108628809896666,
+        "speed-index": 880.6449772478652
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:56:14.435Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000001",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000001-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 400.381,
+        "largest-contentful-paint": 560.381,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001108628809896666,
+        "speed-index": 452.1593449156055
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:56:31.616Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000007",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000007-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 402.33000000000004,
+        "largest-contentful-paint": 562.33,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001108628809896666,
+        "speed-index": 667.7170447557345
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T10:56:47.879Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000007",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000007-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.169,
+        "largest-contentful-paint": 563.169,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0006938197304021419,
+        "speed-index": 505.4967871067164
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:09:51.640Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000007",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000007-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 406.73900000000003,
+        "largest-contentful-paint": 566.739,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.00046278129992601295,
+        "speed-index": 500.69832924614116
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:10:13.889Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000002",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000002-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.07,
+        "largest-contentful-paint": 563.0699999999999,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 1123.231931823549
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:10:31.648Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000002",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000002-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.959,
+        "largest-contentful-paint": 563.9590000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 501.95638000738904
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:10:50.169Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000002",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000002-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 403.83799999999997,
+        "largest-contentful-paint": 563.838,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 662.3879927085462
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:11:06.704Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000008",
+      "public": true,
+      "run": 1,
+      "stem": "parts-20000000-0000-4000-8000-000000000008-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 222.744,
+        "largest-contentful-paint": 522.744,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 454.3559342210443
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:11:23.361Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000008",
+      "public": true,
+      "run": 2,
+      "stem": "parts-20000000-0000-4000-8000-000000000008-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 401.865,
+        "largest-contentful-paint": 561.865,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 453.51333624974643
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:11:40.352Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000008",
+      "public": true,
+      "run": 3,
+      "stem": "parts-20000000-0000-4000-8000-000000000008-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 285.204,
+        "largest-contentful-paint": 624.204,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0014353878022869456,
+        "speed-index": 686.8300112222748
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:11:57.431Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/request",
+      "public": false,
+      "run": 1,
+      "stem": "request-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 321.892,
+        "largest-contentful-paint": 641.892,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 506.39395749778214
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:12:15.818Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/request",
+      "public": false,
+      "run": 2,
+      "stem": "request-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.491,
+        "largest-contentful-paint": 663.491,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 413.8081381482797
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:12:32.695Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/request",
+      "public": false,
+      "run": 3,
+      "stem": "request-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.382,
+        "largest-contentful-paint": 563.3820000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 403.9016138532453
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:12:49.730Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/request/success",
+      "public": false,
+      "run": 1,
+      "stem": "request-success-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.2715,
+        "largest-contentful-paint": 563.2715000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06038559657100954,
+        "speed-index": 323.2715
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:13:07.343Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/request/success",
+      "public": false,
+      "run": 2,
+      "stem": "request-success-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.424,
+        "largest-contentful-paint": 483.424,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06038559657100954,
+        "speed-index": 323.424
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:13:24.326Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/request/success",
+      "public": false,
+      "run": 3,
+      "stem": "request-success-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 320.8755,
+        "largest-contentful-paint": 520.8755,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06038559657100954,
+        "speed-index": 320.8755
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:13:40.257Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/login",
+      "public": false,
+      "run": 1,
+      "stem": "login-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 330.86400000000003,
+        "largest-contentful-paint": 570.864,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004723113763389078,
+        "speed-index": 330.86400000000003
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:27:45.832Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/login",
+      "public": false,
+      "run": 2,
+      "stem": "login-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 291.312,
+        "largest-contentful-paint": 451.312,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004723113763389078,
+        "speed-index": 291.312
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:28:02.064Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/login",
+      "public": false,
+      "run": 3,
+      "stem": "login-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 325.161,
+        "largest-contentful-paint": 525.1610000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004723113763389078,
+        "speed-index": 325.161
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:28:17.355Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/cart",
+      "public": false,
+      "run": 1,
+      "stem": "cart-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 322.183,
+        "largest-contentful-paint": 522.183,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004723113763389078,
+        "speed-index": 322.183
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:14:45.064Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/cart",
+      "public": false,
+      "run": 2,
+      "stem": "cart-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 219.268,
+        "largest-contentful-paint": 522.268,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004723113763389078,
+        "speed-index": 219.268
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:15:00.924Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/cart",
+      "public": false,
+      "run": 3,
+      "stem": "cart-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 322.10900000000004,
+        "largest-contentful-paint": 522.109,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0011750816569623208,
+        "speed-index": 322.10900000000004
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:15:17.078Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/checkout",
+      "public": false,
+      "run": 1,
+      "stem": "checkout-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 322.127,
+        "largest-contentful-paint": 522.127,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004648912912617109,
+        "speed-index": 322.127
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:15:32.903Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/checkout",
+      "public": false,
+      "run": 2,
+      "stem": "checkout-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.959,
+        "largest-contentful-paint": 523.9590000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004648912912617109,
+        "speed-index": 323.959
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:15:48.747Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/checkout",
+      "public": false,
+      "run": 3,
+      "stem": "checkout-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 322.85,
+        "largest-contentful-paint": 522.85,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004648912912617109,
+        "speed-index": 322.85
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:16:04.650Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/checkout/success",
+      "public": false,
+      "run": 1,
+      "stem": "checkout-success-1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.52,
+        "largest-contentful-paint": 523.52,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06038559657100954,
+        "speed-index": 323.52
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:16:20.518Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/checkout/success",
+      "public": false,
+      "run": 2,
+      "stem": "checkout-success-2",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 322.173,
+        "largest-contentful-paint": 522.173,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06038559657100954,
+        "speed-index": 322.173
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:16:36.458Z",
+      "lighthouseVersion": "13.5.0"
+    },
+    {
+      "path": "/checkout/success",
+      "public": false,
+      "run": 3,
+      "stem": "checkout-success-3",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 321.575,
+        "largest-contentful-paint": 521.575,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06040190720492951,
+        "speed-index": 321.575
+      },
+      "warnings": [],
+      "fetchTime": "2026-11-19T11:16:52.264Z",
+      "lighthouseVersion": "13.5.0"
+    }
+  ],
+  "summary": [
+    {
+      "path": "/",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 235.21,
+        "largest-contentful-paint": 643.21,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 422.19125397975733
+      },
+      "report": "reports/home.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/services",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 325.0135,
+        "largest-contentful-paint": 605.0135,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 340.9052788004543
+      },
+      "report": "reports/services.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 325.0485,
+        "largest-contentful-paint": 605.0485,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 571.9915822096752
+      },
+      "report": "reports/parts.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000003",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 402.659,
+        "largest-contentful-paint": 562.659,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 402.659
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000003.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000006",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 403.301,
+        "largest-contentful-paint": 563.3009999999999,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0019317544793697094,
+        "speed-index": 646.3033798276258
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000006.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000004",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 403.29200000000003,
+        "largest-contentful-paint": 563.292,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 592.578545823737
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000004.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000009",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 401.53700000000003,
+        "largest-contentful-paint": 561.537,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 688.7098448361671
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000009.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000010",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 401.576,
+        "largest-contentful-paint": 561.576,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 541.0729528235737
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000010.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000005",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 401.23900000000003,
+        "largest-contentful-paint": 561.239,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 558.0666411674154
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000005.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000001",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 401.711,
+        "largest-contentful-paint": 561.711,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001108628809896666,
+        "speed-index": 549.8347480794511
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000001.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000007",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 402.33000000000004,
+        "largest-contentful-paint": 562.33,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001108628809896666,
+        "speed-index": 667.7170447557345
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000007.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000002",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 403.07,
+        "largest-contentful-paint": 563.0699999999999,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 1123.231931823549
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000002.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000008",
+      "public": true,
+      "mode": "Чистый профиль",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "seo": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 222.744,
+        "largest-contentful-paint": 522.744,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.001370909825618407,
+        "speed-index": 454.3559342210443
+      },
+      "report": "reports/parts-20000000-0000-4000-8000-000000000008.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/request",
+      "public": false,
+      "mode": "Чистый профиль, noindex",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 321.892,
+        "largest-contentful-paint": 641.892,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0002085061111006652,
+        "speed-index": 506.39395749778214
+      },
+      "report": "reports/request.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/request/success",
+      "public": false,
+      "mode": "Чистый профиль, noindex",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 323.2715,
+        "largest-contentful-paint": 563.2715000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06038559657100954,
+        "speed-index": 323.2715
+      },
+      "report": "reports/request-success.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/login",
+      "public": false,
+      "mode": "Чистый профиль, noindex",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 330.86400000000003,
+        "largest-contentful-paint": 570.864,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004723113763389078,
+        "speed-index": 330.86400000000003
+      },
+      "report": "reports/login.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/cart",
+      "public": false,
+      "mode": "Чистый профиль, noindex",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 322.183,
+        "largest-contentful-paint": 522.183,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004723113763389078,
+        "speed-index": 322.183
+      },
+      "report": "reports/cart.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/checkout",
+      "public": false,
+      "mode": "Чистый профиль, noindex",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 322.127,
+        "largest-contentful-paint": 522.127,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0004648912912617109,
+        "speed-index": 322.127
+      },
+      "report": "reports/checkout.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "path": "/checkout/success",
+      "public": false,
+      "mode": "Чистый профиль, noindex",
+      "runs": 3,
+      "scores": {
+        "performance": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "accessibility": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        },
+        "best-practices": {
+          "runs": [
+            100,
+            100,
+            100
+          ],
+          "median": 100
+        }
+      },
+      "medianRun": 1,
+      "metrics": {
+        "first-contentful-paint": 323.52,
+        "largest-contentful-paint": 523.52,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.06038559657100954,
+        "speed-index": 323.52
+      },
+      "report": "reports/checkout-success.html",
+      "warnings": [
+        [],
+        [],
+        []
+      ]
+    }
+  ],
+  "authenticated": [
+    {
+      "path": "/account",
+      "role": "client",
+      "mode": "После входа, один запуск, данные сессии сохранены",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 227.5802,
+        "largest-contentful-paint": 297.7090146972656,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.21680603658140257,
+        "speed-index": 275.8035247419027
+      },
+      "warnings": []
+    },
+    {
+      "path": "/admin",
+      "role": "admin",
+      "mode": "После входа, один запуск, данные сессии сохранены",
+      "scores": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 240.57017624511718,
+        "largest-contentful-paint": 274.1839,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.21391067560471586,
+        "speed-index": 275.54982729458163
+      },
+      "warnings": []
+    },
+    {
+      "path": "/master",
+      "role": "master",
+      "mode": "После входа, один запуск, данные сессии сохранены",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 234.27917624511718,
+        "largest-contentful-paint": 234.27917624511718,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.04679772774957958,
+        "speed-index": 234.27917624511718
+      },
+      "warnings": []
+    }
+  ],
+  "live": [
+    {
+      "path": "/parts",
+      "scenario": "Ввод поискового запроса и выбор категории",
+      "metrics": {
+        "LCP": {
+          "value": 536,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.0001684551097728588,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 24,
+          "rating": "good"
+        }
+      },
+      "interactions": [
+        {
+          "type": "pointerdown",
+          "interactionId": 1442,
+          "duration": 24,
+          "inputDelay": 2.2999999821186066,
+          "processing": 0.5,
+          "presentation": 21.200000017881393
+        },
+        {
+          "type": "pointerup",
+          "interactionId": 1442,
+          "duration": 24,
+          "inputDelay": 4.4000000059604645,
+          "processing": 0.19999998807907104,
+          "presentation": 19.400000005960464
+        },
+        {
+          "type": "click",
+          "interactionId": 1442,
+          "duration": 24,
+          "inputDelay": 4.9000000059604645,
+          "processing": 0.29999998211860657,
+          "presentation": 18.80000001192093
+        }
+      ]
+    },
+    {
+      "path": "/parts/20000000-0000-4000-8000-000000000003",
+      "scenario": "Добавление детали в локальную корзину",
+      "metrics": {
+        "LCP": {
+          "value": 536,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.0001684551097728588,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 24,
+          "rating": "good"
+        }
+      },
+      "interactions": [
+        {
+          "type": "pointerdown",
+          "interactionId": 1442,
+          "duration": 24,
+          "inputDelay": 2.2999999821186066,
+          "processing": 0.5,
+          "presentation": 21.200000017881393
+        },
+        {
+          "type": "pointerup",
+          "interactionId": 1442,
+          "duration": 24,
+          "inputDelay": 4.4000000059604645,
+          "processing": 0.19999998807907104,
+          "presentation": 19.400000005960464
+        },
+        {
+          "type": "click",
+          "interactionId": 1442,
+          "duration": 24,
+          "inputDelay": 4.9000000059604645,
+          "processing": 0.29999998211860657,
+          "presentation": 18.80000001192093
+        },
+        {
+          "type": "pointerdown",
+          "interactionId": 1449,
+          "duration": 24,
+          "inputDelay": 1.5,
+          "processing": 0.29999998211860657,
+          "presentation": 22.200000017881393
+        },
+        {
+          "type": "pointerup",
+          "interactionId": 1449,
+          "duration": 24,
+          "inputDelay": 2.800000011920929,
+          "processing": 0.09999999403953552,
+          "presentation": 21.099999994039536
+        },
+        {
+          "type": "click",
+          "interactionId": 1449,
+          "duration": 24,
+          "inputDelay": 2.9000000059604645,
+          "processing": 3,
+          "presentation": 18.099999994039536
+        }
+      ]
+    },
+    {
+      "path": "/cart",
+      "scenario": "Работа с локальной корзиной и навигация клавиатурой",
+      "metrics": {
+        "LCP": {
+          "value": 60,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.025388885588469325,
+          "rating": "good"
+        }
+      },
+      "interactions": []
+    },
+    {
+      "path": "/checkout",
+      "scenario": "Ввод контактов, выбор доставки и комментарий без отправки",
+      "metrics": {
+        "LCP": {
+          "value": 192,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.06452113715277778,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 32,
+          "rating": "good"
+        }
+      },
+      "interactions": [
+        {
+          "type": "pointerdown",
+          "interactionId": 1639,
+          "duration": 32,
+          "inputDelay": 0.800000011920929,
+          "processing": 0.19999998807907104,
+          "presentation": 31
+        },
+        {
+          "type": "pointerup",
+          "interactionId": 1639,
+          "duration": 32,
+          "inputDelay": 1.800000011920929,
+          "processing": 0.09999999403953552,
+          "presentation": 30.099999994039536
+        },
+        {
+          "type": "click",
+          "interactionId": 1639,
+          "duration": 32,
+          "inputDelay": 2,
+          "processing": 0.09999999403953552,
+          "presentation": 29.900000005960464
+        },
+        {
+          "type": "keydown",
+          "interactionId": 1646,
+          "duration": 16,
+          "inputDelay": 0.19999998807907104,
+          "processing": 0.4000000059604645,
+          "presentation": 15.400000005960464
+        },
+        {
+          "type": "keypress",
+          "interactionId": 1646,
+          "duration": 16,
+          "inputDelay": 0.5999999940395355,
+          "processing": 0.4000000059604645,
+          "presentation": 15
+        },
+        {
+          "type": "keyup",
+          "interactionId": 1646,
+          "duration": 32,
+          "inputDelay": 0.5999999940395355,
+          "processing": 0,
+          "presentation": 31.400000005960464
+        }
+      ]
+    },
+    {
+      "path": "/request",
+      "scenario": "Заполнение полей заявки и переключение согласия без отправки",
+      "metrics": {
+        "LCP": {
+          "value": 56,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.00037350961190682865,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 32,
+          "rating": "good"
+        }
+      },
+      "interactions": [
+        {
+          "type": "pointerdown",
+          "interactionId": 8223,
+          "duration": 32,
+          "inputDelay": 1,
+          "processing": 0.19999998807907104,
+          "presentation": 30.80000001192093
+        },
+        {
+          "type": "pointerup",
+          "interactionId": 8223,
+          "duration": 32,
+          "inputDelay": 2.4000000059604645,
+          "processing": 0.19999998807907104,
+          "presentation": 29.400000005960464
+        },
+        {
+          "type": "click",
+          "interactionId": 8223,
+          "duration": 32,
+          "inputDelay": 2.699999988079071,
+          "processing": 0.20000001788139343,
+          "presentation": 29.099999994039536
+        },
+        {
+          "type": "keydown",
+          "interactionId": 8230,
+          "duration": 24,
+          "inputDelay": 0.20000001788139343,
+          "processing": 0.29999998211860657,
+          "presentation": 23.5
+        },
+        {
+          "type": "keypress",
+          "interactionId": 8230,
+          "duration": 24,
+          "inputDelay": 0.5,
+          "processing": 0.30000001192092896,
+          "presentation": 23.19999998807907
+        },
+        {
+          "type": "keyup",
+          "interactionId": 8230,
+          "duration": 24,
+          "inputDelay": 0.20000001788139343,
+          "processing": 0,
+          "presentation": 23.799999982118607
+        }
+      ]
+    },
+    {
+      "path": "/login",
+      "scenario": "Переключение регистрации и входа без создания пользователя",
+      "metrics": {
+        "LCP": {
+          "value": 76,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.00009682987919560186,
+          "rating": "good"
+        },
+        "INP": {
+          "value": 24,
+          "rating": "good"
+        }
+      },
+      "interactions": [
+        {
+          "type": "pointerdown",
+          "interactionId": 7953,
+          "duration": 24,
+          "inputDelay": 1.0999999940395355,
+          "processing": 0.30000001192092896,
+          "presentation": 22.599999994039536
+        },
+        {
+          "type": "pointerup",
+          "interactionId": 7953,
+          "duration": 24,
+          "inputDelay": 1.5,
+          "processing": 0.09999999403953552,
+          "presentation": 22.400000005960464
+        },
+        {
+          "type": "click",
+          "interactionId": 7953,
+          "duration": 24,
+          "inputDelay": 1.5999999940395355,
+          "processing": 1.2999999821186066,
+          "presentation": 21.100000023841858
+        }
+      ]
+    },
+    {
+      "path": "/account",
+      "scenario": "Открытие и отмена редактирования профиля",
+      "metrics": {
+        "LCP": {
+          "value": 492,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.18218432002314813,
+          "rating": "needs-improvement"
+        },
+        "INP": {
+          "value": 32,
+          "rating": "good"
+        }
+      },
+      "interactions": [
+        {
+          "type": "pointerdown",
+          "interactionId": 223,
+          "duration": 32,
+          "inputDelay": 1.4000000059604645,
+          "processing": 0.29999998211860657,
+          "presentation": 30.30000001192093
+        },
+        {
+          "type": "pointerup",
+          "interactionId": 223,
+          "duration": 32,
+          "inputDelay": 1.9000000059604645,
+          "processing": 0,
+          "presentation": 30.099999994039536
+        },
+        {
+          "type": "click",
+          "interactionId": 223,
+          "duration": 32,
+          "inputDelay": 1.9000000059604645,
+          "processing": 1.699999988079071,
+          "presentation": 28.400000005960464
+        }
+      ]
+    },
+    {
+      "path": "/admin",
+      "scenario": "Обновление списка после восстановления сессии",
+      "metrics": {
+        "LCP": {
+          "value": 72,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.178,
+          "rating": "needs-improvement"
+        }
+      },
+      "interactions": []
+    },
+    {
+      "path": "/master",
+      "scenario": "Обновление списка после восстановления сессии",
+      "metrics": {
+        "LCP": {
+          "value": 60,
+          "rating": "good"
+        },
+        "CLS": {
+          "value": 0.04611344401041667,
+          "rating": "good"
+        }
+      },
+      "interactions": []
+    }
+  ],
+  "api": [
+    {
+      "method": "GET",
+      "path": "/api/account",
+      "status": 401,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "method": "GET",
+      "path": "/api/unknown",
+      "status": 404,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "method": "POST",
+      "path": "/api/repair-requests",
+      "size": 2,
+      "status": 403,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "method": "POST",
+      "path": "/api/repair-requests",
+      "size": 2,
+      "status": 415,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "method": "POST",
+      "path": "/api/repair-requests",
+      "size": 2,
+      "status": 400,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "method": "POST",
+      "path": "/api/repair-requests",
+      "size": 1048577,
+      "status": 413,
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "registrationRateLimit": [
+    {
+      "status": 400,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "status": 400,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "status": 400,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "status": 429,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "status": 429,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "status": 429,
+      "robots": "noindex, nofollow"
+    }
+  ]
+}

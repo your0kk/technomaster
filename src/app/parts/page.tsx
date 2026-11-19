@@ -34,7 +34,7 @@ export default async function Parts({
   );
   return (
     <div className="container section">
-      <Intro label="КАТАЛОГ ЗАПЧАСТЕЙ" title="Найдём деталь. Вернём в строй.">
+      <Intro label="КАТАЛОГ" title="Запчасти для стиральных машин">
         Насосы, ТЭНы и другие детали для стиральных машин. Перед покупкой
         проверим совместимость с вашей техникой.
       </Intro>
@@ -59,7 +59,7 @@ export default async function Parts({
             ))}
           </select>
         </label>
-        <button className="button">Найти →</button>
+        <button className="button">Найти</button>
       </form>
       <div className="section-heading">
         <p className="muted">Найдено: {parts.length}</p>

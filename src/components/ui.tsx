@@ -90,18 +90,18 @@ export function PartCard({
     <Link className="part-card" href={`/parts/${part.id}`}>
       <PartPhoto part={part} />
       <div className="part-body">
-        <span className="meta">
-          {part.category} · {part.article}
-        </span>
+        <div className="part-meta">
+          <span className="meta">{part.category}</span>
+          <span className="part-article">Артикул {part.article}</span>
+        </div>
         <Heading>{part.title}</Heading>
         <span className={part.stock_quantity > 0 ? "stock" : "muted"}>
           {part.stock_quantity > 0
-            ? `В наличии · ${part.stock_quantity} шт.`
+            ? `В наличии: ${part.stock_quantity} шт.`
             : "Под заказ"}
         </span>
         <div className="price-row">
           <strong>{money(part.price)}</strong>
-          <span aria-hidden="true">↗</span>
         </div>
       </div>
     </Link>

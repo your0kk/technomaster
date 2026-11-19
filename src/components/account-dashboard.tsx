@@ -168,7 +168,7 @@ export default function AccountDashboard() {
                       <span className="meta">Заявка {request.id.slice(0, 8)}</span>
                       <h3>
                         {request.appliance_type}
-                        {request.appliance_brand && ` · ${request.appliance_brand}`}
+                        {request.appliance_brand && ` ${request.appliance_brand}`}
                       </h3>
                       <p>{request.issue_description}</p>
                     </div>

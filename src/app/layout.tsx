@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: {
     default: "ТехноМастер — ремонт техники в Коченёво",
-    template: "%s · ТехноМастер",
+    template: "%s — ТехноМастер",
   },
   description:
     "Ремонт стиральных машин и бытовой техники в Коченёво и Новосибирской области. Каталог запчастей и вызов мастера.",
@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="region-bar">
           <div className="container">
             <span>Коченёво и Новосибирская область</span>
-            <span>Ежедневно · 09:00–20:00</span>
+            <span>Ежедневно с 09:00 до 20:00</span>
           </div>
         </div>
         <header className="site-header">
@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <small>Коченёво</small>
             </div>
             <Link className="button" href="/request">
-              Вызвать мастера <span>↗</span>
+              Вызвать мастера
             </Link>
           </div>
         </header>
@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/master">Кабинет мастера</Link>
           </div>
           <div className="container footer-bottom">
-            <span>Учебный проект · ТехноМастер, 2026</span>
+            <span>© 2026 ТехноМастер</span>
             <span>
               <a href="https://t.me/ATPABKA">Telegram: @ATPABKA</a>
             </span>

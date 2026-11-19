@@ -12,26 +12,24 @@ export default async function Services() {
   const data = await catalogData();
   return (
     <div className="container section">
-      <Intro label="УСЛУГИ" title="Ремонт, который возвращает комфорт">
-        От диагностики до проверки результата. В приоритете — стиральные машины;
-        также помогаем с другой бытовой техникой.
+      <Intro label="УСЛУГИ" title="Ремонт бытовой техники">
+        Ремонтируем стиральные машины, посудомоечные машины, холодильники и
+        духовые шкафы. Стоимость работ согласуем после диагностики.
       </Intro>
       <DataNotice {...data} />
       <div className="service-grid">
         {data.services.map((s) => (
           <article className="service-card" key={s.id}>
-            <span className="card-mark" aria-hidden="true">◌</span>
             <h2>{s.title}</h2>
             <p>{s.description}</p>
             <strong>от {money(s.price_from)}</strong>
             <Link className="text-link" href={`/request?service=${s.id}`}>
-              Оставить заявку →
+              Оставить заявку
             </Link>
           </article>
         ))}
       </div>
       <section className="pricing panel">
-        <p className="eyebrow">БЕЗ СЮРПРИЗОВ</p>
         <h2>Ориентировочная стоимость</h2>
         {[
           ["Диагностика", 500],
@@ -50,7 +48,7 @@ export default async function Services() {
           ремонта в заявке.
         </p>
         <Link className="button" href="/request">
-          Не знаю причину поломки — вызвать мастера ↗
+          Вызвать мастера для диагностики
         </Link>
       </section>
     </div>

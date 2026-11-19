@@ -10,7 +10,7 @@ export default async function Home() {
     <>
       <section className="container hero">
         <div>
-          <p className="eyebrow">МЕСТНЫЙ СЕРВИС · КОЧЕНЁВО</p>
+          <p className="eyebrow">РЕМОНТ ТЕХНИКИ В КОЧЕНЁВО</p>
           <h1>
             Ремонт бытовой
             <br />
@@ -22,10 +22,10 @@ export default async function Home() {
           </p>
           <div className="actions">
             <Link className="button" href="/request">
-              Вызвать мастера <span>↗</span>
+              Вызвать мастера
             </Link>
             <Link className="text-link" href="/services">
-              Узнать стоимость →
+              Узнать стоимость
             </Link>
           </div>
           <p className="meta">
@@ -39,6 +39,7 @@ export default async function Home() {
             width={640}
             height={560}
             priority
+            fetchPriority="high"
           />
           <div className="image-note">
             <span className="mini-drum">◎</span>
@@ -46,7 +47,6 @@ export default async function Home() {
               <strong>Выезд мастера от 700 ₽</strong>
               <span>Диагностика от 500 ₽</span>
             </div>
-            <span className="serial">•</span>
           </div>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default async function Home() {
               <h2>Основные услуги</h2>
             </div>
             <Link className="text-link" href="/services">
-              Все услуги ↗
+              Все услуги
             </Link>
           </div>
           <DataNotice {...data} />
@@ -69,12 +69,10 @@ export default async function Home() {
                 className="service-card"
                 key={s.id}
               >
-                <span className="card-mark" aria-hidden="true">◌</span>
                 <h3>{s.title}</h3>
                 <p>{s.description}</p>
                 <div className="price-row">
                   <strong>от {money(s.price_from)}</strong>
-                  <span>↗</span>
                 </div>
               </Link>
             ))}
@@ -118,7 +116,7 @@ export default async function Home() {
             <h2>Популярные запчасти</h2>
           </div>
           <Link className="text-link" href="/parts">
-            Весь каталог ↗
+            Весь каталог
           </Link>
         </div>
         <div className="four-grid">

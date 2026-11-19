@@ -55,13 +55,14 @@ export default async function Part({
           </p>
         </div>
         <div>
-          <p className="eyebrow">
-            {p.brand} / {p.article}
-          </p>
+          <div className="part-meta product-meta">
+            <span className="meta">{p.brand}</span>
+            <span className="part-article">Артикул {p.article}</span>
+          </div>
           <h1>{p.title}</h1>
           <p className="stock">
             {p.stock_quantity > 0
-              ? `В наличии · ${p.stock_quantity} шт.`
+              ? `В наличии: ${p.stock_quantity} шт.`
               : "Под заказ"}
           </p>
           <p className="big-price">{money(p.price)}</p>
@@ -74,7 +75,7 @@ export default async function Part({
           <p className="muted">Совместимость проверим по модели техники перед выдачей.</p>
           <AddToCart part={p} />
           <Link className="button full" href="/request">
-            Нужна помощь с подбором ↗
+            Нужна помощь с подбором
           </Link>
           <div className="notice">Онлайн-оплата и кассовый чек будут доступны после подтверждения менеджером.</div>
         </div>
