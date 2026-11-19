@@ -97,10 +97,11 @@ export default function AuthPanel() {
         </ul>
       </div>
       <div className="panel auth-panel">
-        <div className="auth-tabs" role="tablist" aria-label="Вход или регистрация">
+        <div className="auth-tabs" role="group" aria-label="Вход или регистрация">
           <button
             type="button"
             className={mode === "login" ? "active" : ""}
+            aria-pressed={mode === "login"}
             onClick={() => switchMode("login")}
           >
             Вход
@@ -108,6 +109,7 @@ export default function AuthPanel() {
           <button
             type="button"
             className={mode === "register" ? "active" : ""}
+            aria-pressed={mode === "register"}
             onClick={() => switchMode("register")}
           >
             Регистрация
